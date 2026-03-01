@@ -151,9 +151,11 @@
     <button class="tab-button" data-tab="tab3">2ª Forma Normal (2FN)</button>
     <button class="tab-button" data-tab="tab4">3ª Forma Normal (3FN)</button>
     <button class="tab-button" data-tab="tab5">Diagrama Final</button>
-    <button class="tab-button" data-tab="tab6">Implementación</button>
-    <button class="tab-button" data-tab="tab7">Consultas</button>
-    <button class="tab-button" data-tab="tab8">Extras</button>
+    <!--
+      <button class="tab-button" data-tab="tab6">Implementación</button>
+      <button class="tab-button" data-tab="tab7">Consultas</button>
+      <button class="tab-button" data-tab="tab8">Extras</button>
+    -->
   </div>
 
   <!-- TABLA SIN NORMALIZAR -->
@@ -161,45 +163,7 @@
     <h2>Tabla sin Normalizar</h2>
     <p><b>Explicación:</b> Aquí toda la información está en una sola tabla. 
     Esto genera redundancia porque si un cliente compra varios productos, su nombre y teléfono se repiten en cada fila.</p>
-    <table border="1">
-      <caption>Factura sin normalizar</caption>
-      <tr>
-        <th>id_factura</th>
-        <th>fecha</th>
-        <th>cliente_nombre</th>
-        <th>cliente_tel</th>
-        <th>vendedor_nombre</th>
-        <th>vendedor_tel</th>
-        <th>proveedor_nombre</th>
-        <th>producto</th>
-        <th>cantidad</th>
-        <th>precio_unitario</th>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>2025-08-21</td>
-        <td>Juan Pérez</td>
-        <td>3001112233</td>
-        <td>Carlos Gómez</td>
-        <td>3112223344</td>
-        <td>Nike</td>
-        <td>Zapato X</td>
-        <td>2</td>
-        <td>150000</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>2025-08-22</td>
-        <td>Ana Torres</td>
-        <td>3105556677</td>
-        <td>Carlos Gómez</td>
-        <td>3112223344</td>
-        <td>Adidas</td>
-        <td>Zapato Y</td>
-        <td>1</td>
-        <td>200000</td>
-      </tr>
-    </table>
+    <img src="IMAGENES/ID.jpg" alt=inventario de datos width="500">
   </div>
 
   <!-- TABLA NORMALIZACION -->
@@ -210,80 +174,20 @@
 
   <div id="tab2" class="tab-content">
     <h2>Primera Forma Normal (1FN)</h2>
-    <p><b>Explicación:</b> En 1FN eliminamos grupos repetidos y aseguramos que cada atributo sea atómico.
-    Por eso se separa la información en dos tablas: <i>Factura</i> (datos generales de la factura) y <i>DetalleFactura</i> (productos comprados).</p>
-    <table>
-      <caption>Tabla: Factura</caption>
-      <tr><th>id_factura</th><th>fecha</th><th>cliente_nombre</th><th>cliente_tel</th><th>vendedor_nombre</th><th>vendedor_tel</th></tr>
-      <tr><td>1</td><td>2025-08-21</td><td>Juan Pérez</td><td>3001112233</td><td>Carlos Gómez</td><td>3112223344</td></tr>
-    </table>
-    <table>
-      <caption>Tabla: DetalleFactura</caption>
-      <tr><th>id_detalle</th><th>id_factura</th><th>proveedor_nombre</th><th>producto</th><th>cantidad</th><th>precio_unitario</th></tr>
-      <tr><td>1</td><td>1</td><td>Nike</td><td>Zapato X</td><td>2</td><td>150000</td></tr>
-    </table>
+    <p><b>Explicación:</b> En 1FN eliminamos grupos repetidos y aseguramos que cada atributo sea atómico.</p>
+    <img src="IMAGENES/1FN.jpg" alt="1 forma normal" width="500">
   </div>
 
   <div id="tab3" class="tab-content">
     <h2>Segunda Forma Normal (2FN)</h2>
-     <p><b>Explicación:</b> En 2FN eliminamos dependencias parciales. 
-    Ahora extraemos la información redundante (clientes, vendedores y proveedores) a una nueva tabla llamada <i>Persona</i>. 
-    Luego las facturas y los detalles hacen referencia a las personas mediante llaves foráneas.</p>
-    <table>
-      <caption>Tabla: Persona</caption>
-      <tr><th>id_persona</th><th>nombre</th><th>telefono</th><th>correo</th></tr>
-      <tr><td>1</td><td>Juan Pérez</td><td>3001112233</td><td>juan@correo.com</td></tr>
-      <tr><td>2</td><td>Carlos Gómez</td><td>3112223344</td><td>carlos@correo.com</td></tr>
-      <tr><td>3</td><td>Nike</td><td>-</td><td>nike@proveedor.com</td></tr>
-    </table>
-    <table>
-      <caption>Tabla: Factura</caption>
-      <tr><th>id_factura</th><th>fecha</th><th>id_cliente (FK)</th><th>id_vendedor (FK)</th></tr>
-      <tr><td>1</td><td>2025-08-21</td><td>1</td><td>2</td></tr>
-    </table>
-    <table>
-      <caption>Tabla: DetalleFactura</caption>
-      <tr><th>id_detalle</th><th>id_factura</th><th>id_proveedor (FK)</th><th>producto</th><th>cantidad</th><th>precio_unitario</th></tr>
-      <tr><td>1</td><td>1</td><td>3</td><td>Zapato X</td><td>2</td><td>150000</td></tr>
-    </table>
+    <p><b>Explicación:</b> En 2FN eliminamos dependencias parciales. </p>
+    <img src="IMAGENES/2FN.jpg" alt="segunda forma normal" width="500">
   </div>
 
   <div id="tab4" class="tab-content">
     <h2>Tercera Forma Normal (3FN)</h2>
-    <p><b>Explicación:</b> En 3FN eliminamos dependencias transitivas. 
-    En este caso, el <i>rol</i> de una persona (cliente, vendedor o proveedor) se maneja en una tabla independiente. 
-    Así evitamos guardar roles en la tabla Persona, lo que sería redundante y dificultaría si alguien tiene varios roles.</p>
-    <table>
-      <caption>Tabla: Persona</caption>
-      <tr><th>id_persona</th><th>nombre</th><th>telefono</th><th>correo</th></tr>
-      <tr><td>1</td><td>Juan Pérez</td><td>3001112233</td><td>juan@correo.com</td></tr>
-      <tr><td>2</td><td>Carlos Gómez</td><td>3112223344</td><td>carlos@correo.com</td></tr>
-      <tr><td>3</td><td>Nike</td><td>-</td><td>nike@proveedor.com</td></tr>
-    </table>
-    <table>
-      <caption>Tabla: Rol</caption>
-      <tr><th>id_rol</th><th>nombre</th></tr>
-      <tr><td>1</td><td>Cliente</td></tr>
-      <tr><td>2</td><td>Vendedor</td></tr>
-      <tr><td>3</td><td>Proveedor</td></tr>
-    </table>
-    <table>
-      <caption>Tabla: PersonaRol</caption>
-      <tr><th>id_persona</th><th>id_rol</th></tr>
-      <tr><td>1</td><td>1</td></tr>
-      <tr><td>2</td><td>2</td></tr>
-      <tr><td>3</td><td>3</td></tr>
-    </table>
-    <table>
-      <caption>Tabla: Factura</caption>
-      <tr><th>id_factura</th><th>fecha</th><th>id_cliente (FK)</th><th>id_vendedor (FK)</th></tr>
-      <tr><td>1</td><td>2025-08-21</td><td>1</td><td>2</td></tr>
-    </table>
-    <table>
-      <caption>Tabla: DetalleFactura</caption>
-      <tr><th>id_detalle</th><th>id_factura</th><th>id_proveedor (FK)</th><th>producto</th><th>cantidad</th><th>precio_unitario</th></tr>
-      <tr><td>1</td><td>1</td><td>3</td><td>Zapato X</td><td>2</td><td>150000</td></tr>
-    </table>
+    <p><b>Explicación:</b> En 3FN eliminamos dependencias transitivas. </p>
+    <img src="IMAGENES/3FN.jpg" alt="tercera forma normal" width="500">
   </div>
 
   <div id="tab5" class="tab-content">
@@ -298,14 +202,13 @@
       </ul>
       Con este modelo eliminamos redundancias y logramos un diseño flexible y escalable.
     </p>
-    <img src="imagenes/diagrama final 1.2.PNG" alt="Diagrama Final" width="500">
+    <img src="IMAGENES/DER.jpg" alt="Diagrama Final" width="500">
   </div>
-
-  <!-- NUEVAS PESTAÑAS -->
+<!--
   <div id="tab6" class="tab-content">
     <h2>Implementación</h2>
 
-    <!-- Sección 1 -->
+    
     <section class="seccion-tarjeta">
       <h3>Crear BD</h3>
       <p>Aquí se muestra cómo crear la base de datos en SQL</p>
@@ -313,14 +216,14 @@
       <img src="imagenes/crear base de datos 1.2.png" alt="Crear BD Versión 1.2" width="500">
     </section>
 
-    <!-- Sección 2 -->
+    
     <section class="seccion-tarjeta">
       <h3>Crear Tablas</h3>
       <p>En esta parte se define la estructura de las tablas, llaves primarias y foráneas.</p>
       <img src="imagenes/crear tablas.png" alt="Crear Tablas" width="500">
     </section>
 
-    <!-- Sección 3 -->
+    
     <section class="seccion-tarjeta">
       <h3>Insertar Datos</h3>
       <p>Aquí se insertan los registros de ejemplo en las tablas ya creadas.</p>
@@ -330,7 +233,7 @@
 
   <div id="tab7" class="tab-content">
     <h2>Consultas</h2>
-    <!-- Sección 1 -->
+  
     <section class="seccion-tarjeta">
       <h3>Consultas Simples</h3>
       <img src="imagenes/cosnultas simples.png" alt="Consultas s" width="500">
@@ -338,14 +241,14 @@
       <img src="imagenes/consultas simples 1.3.png" alt="Consultas s3" width="500">
     </section>
 
-    <!-- Sección 2 -->
+    
     <section class="seccion-tarjeta">
       <h3>Consultas Intermedias</h3>
       <img src="imagenes/consultas medias.png" alt="Consultas m" width="500">
       <img src="imagenes/consultas medias 1.2.png" alt="Consultas m2" width="500">
     </section>
 
-    <!-- Sección 3 -->
+    
     <section class="seccion-tarjeta">
       <h3>consultas avanzadas</h3>
       <img src="imagenes/consultas avanzadas.png" alt="consultas a" width="500">
@@ -365,7 +268,7 @@
       <img src="imagenes/extras 1.5.png" alt="extras5" width="500">
     </section>
   </div>
-
+ -->
   <!-- MODAL -->
   <div id="imgModal" class="modal">
     <span class="close">&times;</span>
@@ -419,5 +322,6 @@
   </script>
 </body>
 </html>
+
 
 
