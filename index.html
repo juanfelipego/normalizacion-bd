@@ -151,14 +151,14 @@
     <button class="tab-button" data-tab="tab3">2ª Forma Normal (2FN)</button>
     <button class="tab-button" data-tab="tab4">3ª Forma Normal (3FN)</button>
     <button class="tab-button" data-tab="tab5">Diagrama Final</button>
+    <button class="tab-button" data-tab="tab6">creacion</button>
+    <button class="tab-button" data-tab="tab7">reverse engineering</button>
     <!--
-      <button class="tab-button" data-tab="tab6">Implementación</button>
-      <button class="tab-button" data-tab="tab7">Consultas</button>
       <button class="tab-button" data-tab="tab8">Extras</button>
     -->
   </div>
 
-  <!-- TABLA SIN NORMALIZAR -->
+  
   <div id="tab1" class="tab-content">
     <h2>Tabla sin Normalizar</h2>
     <p><b>Explicación:</b> Aquí toda la información está en una sola tabla. 
@@ -166,30 +166,34 @@
     <img src="IMAGENES/ID.jpg" alt=inventario de datos width="500">
   </div>
 
-  <!-- TABLA NORMALIZACION -->
+  
   <div id="tab0" class="tab-content active">
     <h2>¿Qué es Normalización?</h2>
     <p>La normalización es el proceso de organizar los datos en una base de datos para reducir la redundancia y mejorar la integridad.</p>
   </div>
 
+  
   <div id="tab2" class="tab-content">
     <h2>Primera Forma Normal (1FN)</h2>
     <p><b>Explicación:</b> En 1FN eliminamos grupos repetidos y aseguramos que cada atributo sea atómico.</p>
     <img src="IMAGENES/1FN.jpg" alt="1 forma normal" width="500">
   </div>
 
+  
   <div id="tab3" class="tab-content">
     <h2>Segunda Forma Normal (2FN)</h2>
     <p><b>Explicación:</b> En 2FN eliminamos dependencias parciales. </p>
     <img src="IMAGENES/2FN.jpg" alt="segunda forma normal" width="500">
   </div>
 
+  
   <div id="tab4" class="tab-content">
     <h2>Tercera Forma Normal (3FN)</h2>
     <p><b>Explicación:</b> En 3FN eliminamos dependencias transitivas. </p>
     <img src="IMAGENES/3FN.jpg" alt="tercera forma normal" width="500">
   </div>
 
+  
   <div id="tab5" class="tab-content">
     <h2>Diagrama Final</h2>
     <p><b>Explicación:</b> En este diagrama vemos cómo quedó la base de datos en 3FN:
@@ -204,60 +208,55 @@
     </p>
     <img src="IMAGENES/DER.jpg" alt="Diagrama Final" width="500">
   </div>
-<!--
-  <div id="tab6" class="tab-content">
-    <h2>Implementación</h2>
 
-    
+  
+  <div id="tab6" class="tab-content">
+    <h2>creacion</h2>
+
     <section class="seccion-tarjeta">
       <h3>Crear BD</h3>
       <p>Aquí se muestra cómo crear la base de datos en SQL</p>
-      <img src="imagenes/crear base de datos.png" alt="Crear BD" width="500">
-      <img src="imagenes/crear base de datos 1.2.png" alt="Crear BD Versión 1.2" width="500">
+      <img src="IMAGENES/CDB.jpg" alt="Crear BD" width="500">
     </section>
 
-    
     <section class="seccion-tarjeta">
-      <h3>Crear Tablas</h3>
-      <p>En esta parte se define la estructura de las tablas, llaves primarias y foráneas.</p>
-      <img src="imagenes/crear tablas.png" alt="Crear Tablas" width="500">
+      <h3>Hacer Uso BD</h3>
+      <p>Aquí se muestra el como hacer uso de una basa de datos ya creada</p>
+      <img src="IMAGENES/UDB" alt="usar la base de datos 1.2" width="500">
     </section>
 
-    
     <section class="seccion-tarjeta">
-      <h3>Insertar Datos</h3>
-      <p>Aquí se insertan los registros de ejemplo en las tablas ya creadas.</p>
-      <img src="imagenes/insertar datos.png" alt="Insertar Datos" width="500">
+      <h3>Creacion Tablas</h3>
+      <p>Aquí se muestra como se crearon las tablas con sus respectivas llaves primarias, foraneas y los tipos de cada dato.</p>
+      <img src="IMAGENES/CTP.jpg" alt="tabla personas" width="500">
+      <img src="IMAGENES/CTR.jpg" alt="tabla roles" width="500">
+      <img src="IMAGENES/CTPR.jpg" alt="tabla persona rol" width="500">
+      <img src="IMAGENES/CTPRO.jpg" alt="tabla productos" width="500">
+      <img src="IMAGENES/CTPROPRO.jpg" alt="tabla producto proovedor" width="500">
+      <img src="IMAGENES/CTI.jpg" alt="tabla inventario" width="500">
+      <img src="IMAGENES/CTPED.jpg" alt="tabla pedidos" width="500">
+      <img src="IMAGENES/CTDPED.jpg" alt="tabla detalle pedidos" width="500">
+      <img src="IMAGENES/CTF.jpg" alt="tabla factura" width="500">
+      <img src="IMAGENES/CTDF.jpg" alt="tabla detalle factura" width="500">
     </section>
   </div>
 
+  
   <div id="tab7" class="tab-content">
-    <h2>Consultas</h2>
+    <h2>reverse engineering</h2>
   
     <section class="seccion-tarjeta">
-      <h3>Consultas Simples</h3>
-      <img src="imagenes/cosnultas simples.png" alt="Consultas s" width="500">
-      <img src="imagenes/consultas simples 1.2.png" alt="Consultas s2" width="500">
-      <img src="imagenes/consultas simples 1.3.png" alt="Consultas s3" width="500">
+      <h3>Como hacerlo</h3>
+      <img src="IMAGENES/RE.jpg" alt="reverse engineering" width="500">
     </section>
 
-    
     <section class="seccion-tarjeta">
-      <h3>Consultas Intermedias</h3>
-      <img src="imagenes/consultas medias.png" alt="Consultas m" width="500">
-      <img src="imagenes/consultas medias 1.2.png" alt="Consultas m2" width="500">
-    </section>
-
-    
-    <section class="seccion-tarjeta">
-      <h3>consultas avanzadas</h3>
-      <img src="imagenes/consultas avanzadas.png" alt="consultas a" width="500">
-      <img src="imagenes/consultas avanzadas 1.2.png" alt="consultas a2" width="500">
-      <img src="imagenes/consultas avanzadas 1.3.png" alt="consultas a3" width="500">
-      <img src="imagenes/consultas avanzadas 1.4.png" alt="consultas a4" width="500">
+      <h3>Resultado del DER</h3>
+      <img src="IMAGENES/DERSQL.jpg" alt="diagrama sql" width="500">
     </section>
   </div>
-
+  
+<!--
   <div id="tab8" class="tab-content">
     <h2>Extras</h2>
     <section class="seccion-tarjeta">
@@ -269,6 +268,7 @@
     </section>
   </div>
  -->
+  
   <!-- MODAL -->
   <div id="imgModal" class="modal">
     <span class="close">&times;</span>
@@ -322,6 +322,7 @@
   </script>
 </body>
 </html>
+
 
 
 
